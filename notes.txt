@@ -1,24 +1,30 @@
 Functionality 
 
---> Add a checkout/order form
-
---> Submit order (POST) form to Backend API (HTTP)
-
 --> Fetch (GET) Meals Data from Backend Server 
+
 1. Add meals data to real time database on Firebase service
 2. Fetch data using HTTP request + useEffect()
 3. Fetch() or axios() both return promises but useEffect fn can't return a promises must by syncronous 
 4. The data recieved is an object that needs to be transformed into the proper structure for use
 5. The recieved data is placed into state 
 
---> Handle the loading state 
+Handle the loading state 
 1. Create and loading state
 2. Conditional rendering of components as per state
 
---> Handle errors from HTTP request 
+Handle errors from HTTP request 
 1. Create an error state
 2. throw Error inside fetch()
-3. utilize a try, catch block to handle error
+3. utilize a try, catch block to handle error or .catch() since an error also returns rejected promise
 4. set error state
-*5. Unexpected: Loading state shown even with incorret URL. Why? fetchMeals returns a promise when error is thrown. 2 sol'n: 1 - async/await but will not work with useEffect. 2 - Try/catch block in a seperate function 3 - or use then/catch to handle fulfilled and rejected promises.   
+*5. Unexpected: Loading state shown even with incorret URL. Why? fetchMeals returns a promise when error is thrown and therefore must be handled. 2 sol'ns: 1 - async/await but will not work with useEffect, 2 - Try/catch block in a seperate function, 3 - or use then/catch to handle fulfilled and rejected promises.   
+
+
+--> Add a checkout/order form
+1. Make a form component + css module
+2. form states and conditional rendering
+3. Reading form values (useRef) and validation (criteria) and provide feedback to user with messages or icons 
+
+
+--> Submit order (POST) form to Backend API (HTTP)
 
